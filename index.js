@@ -3,6 +3,8 @@ const path = require('path');
 // fs proporciona una API para interactuar con el sistema de archivos 
 const fs = require('fs');
 
+const fetch = require('node-fetch');
+
 
 // Se crea una función para traer y verificar la ruta si es relativa o absoluta
 const checkRoute = (file) => {
@@ -21,10 +23,17 @@ const countLines = fs.readFile('./README.md', 'utf-8', (err, file) => {
   if (err) {
     console.log('Error, no se encontro archivo');
   } else {
-    console.log(file);
+    // console.log(file);
+    url(file);
     let lines = file.split('\n').length;
     // Se retorna el resultado y se concatena para imprimir en consola el total de líneas que contiene el archivo
     console.log(lines + ' ' + 'lines');
     return lines + ' ' + 'lines';
-  }
+  };
 });
+
+const url = (file) => { 
+  const expReg = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))/g;
+  const readLink = file.match(expReg);
+  console.log(readLink);
+};
