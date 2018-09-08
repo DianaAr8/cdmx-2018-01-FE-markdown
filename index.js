@@ -42,3 +42,8 @@ const url = (file) => {
   return arrayLinks;
 };
 
+
+module.exports = {
+  checkRoute,
+  url
+};

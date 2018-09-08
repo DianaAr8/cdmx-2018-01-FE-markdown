@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40.74% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/27</span>
+        <span class='fraction'>10/22</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">16.67% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/6</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40.74% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/27</span>
+        <span class='fraction'>10/22</span>
       </div>
     </div>
   </div>
@@ -91,24 +91,7 @@
 46
 47
 48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+49</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -132,14 +115,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -157,20 +133,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// path te permite trabajar con rutas de archivos y directorios 
@@ -189,62 +155,45 @@ const checkRoute = (file) =&gt; {
   // Si es relativa la cambiara a absoluta con el metodo path.resolve
   const convertRoute = path.resolve(file);  
 &nbsp;
-  fs.readFile( convertRoute, 'utf-8', <span class="fstat-no" title="function not covered" >(e</span>rr, file) =&gt; {
+  fs.readFile(convertRoute, 'utf-8', <span class="fstat-no" title="function not covered" >(e</span>rr, file) =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (err) {</span>
 <span class="cstat-no" title="statement not covered" >      console.log('Error, no se encontro archivo');</span>
     } 
 <span class="cstat-no" title="statement not covered" >    console.log(convertRoute);</span>
-<span class="cstat-no" title="statement not covered" >      url(file);</span>
-    
-});
- }
- checkRoute('./README.md');
+<span class="cstat-no" title="statement not covered" >    url(file);</span>
+  });
+};
+checkRoute('./README.md');
  
-&nbsp;
-// Se manda llamar la función para que se ejecute y como parámetro se le da la ruta del archivo 
-&nbsp;
-// Se crea función para leer y contar las líneas del archivo
-// Se utiliza para leer archivos, se da la ruta y se utiliza "utf8" para reconocimiento de acentos en el archivo al ser leído 
-&nbsp;
 &nbsp;
 const url = <span class="fstat-no" title="function not covered" >(f</span>ile) =&gt; { 
   const expReg = <span class="cstat-no" title="statement not covered" >/\[([^\[\]]*)\]\(((https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,}))\)/g;</span>
   let readLinks = <span class="cstat-no" title="statement not covered" >file.match(expReg);</span>
-  //console.log(readLinks);
+  // console.log(readLinks);
   let arrayLinks = <span class="cstat-no" title="statement not covered" >readLinks.map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; {</span>
     const arrayInfo = <span class="cstat-no" title="statement not covered" >item.split(/\[([^[\]]*)\]\(([^()]*)\)/g);</span>
-      let status = <span class="cstat-no" title="statement not covered" >{</span>
-        href: arrayInfo[2],
-        text: arrayInfo[1],
-        file:  convertRoute
-      }
-<span class="cstat-no" title="statement not covered" >      return status;</span>
-  })
+    let status = <span class="cstat-no" title="statement not covered" >{</span>
+      href: arrayInfo[2],
+      text: arrayInfo[1],
+      file: convertRoute
+    };
+<span class="cstat-no" title="statement not covered" >    return status;</span>
+  });
 <span class="cstat-no" title="statement not covered" >  console.log(arrayLinks);</span>
 <span class="cstat-no" title="statement not covered" >  return arrayLinks;</span>
-<span class="cstat-no" title="statement not covered" >  idLinks (readLinks)</span>
-&nbsp;
 };
-const idLinks = <span class="fstat-no" title="function not covered" >(a</span>rray) =&gt;  {
-<span class="cstat-no" title="statement not covered" >    console.log(idlinks);</span>
-<span class="cstat-no" title="statement not covered" >    return array.map(<span class="fstat-no" title="function not covered" >(l</span>ink) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        console.log(link);</span>
-        
-    })
-    
-}
+&nbsp;
 &nbsp;
 module.exports = {
-    checkRoute,
-    url,
-    idLinks 
-}</pre></td></tr>
+  checkRoute,
+  url
+};</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Sep 06 2018 19:42:07 GMT-0500 (GMT-05:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Sep 08 2018 04:42:24 GMT-0500 (GMT-05:00)
 </div>
 </div>
 <script src="prettify.js"></script>
